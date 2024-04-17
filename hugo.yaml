@@ -3,3 +3,44 @@ languageCode: en-us
 title: Ian Lanham | All Shapes of Data
 
 theme: hextra
+
+menu:
+  main:
+    - name: About
+      pageRef: /about
+      weight: 1
+    - name: Blog
+      pageRef: /blog
+      weight: 2
+    - name: Resources
+      pageRef: resources.md
+      weight: 3
+    - name: Search
+      weight: 4
+      params:
+        type: search
+    - name: GitHub
+      weight: 5
+      url: "https://github.com/ilanham"
+      params:
+        icon: github
+
+params:
+
+  displayUpdatedDate: true
+  dateFormat: "January 2, 2006"
+
+  search:
+    enable: true
+    type: flexsearch
+
+    flexsearch:
+      # index page by: content | summary | heading | title
+      index: content
+
+  blog:
+    list:
+      displayTags: true
+
+  page:
+    width: wide
