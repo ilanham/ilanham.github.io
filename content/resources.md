@@ -38,3 +38,9 @@ This page is between an *X Awesome List* you'd find on GitHub and a browser book
   - Similar to Python Charts above, but for R code and libraries.
 - [GitHub: rstudio/cheatsheets](https://github.com/rstudio/cheatsheets/tree/main)
   - GH repo of [https://posit.co/resources/cheatsheets](https://posit.co/resources/cheatsheets)
+
+### Regular Expressions
+- [RexEgg Cheat Sheet](https://www.rexegg.com/regex-quickstart.html)
+  - I don't know if this is the best site out there for Regular Expressions, but it's what I used to learn it roughly 10 years ago, and I still come back to it to remember lookarounds when I forget the syntax (again)
+- [RegExr](https://regexr.com)
+  - A web-based regular expression parser. I use this to sanity check my capture strings in case something isn't working locally.
