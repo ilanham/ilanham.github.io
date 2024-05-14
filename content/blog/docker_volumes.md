@@ -2,6 +2,7 @@
 title: 'Docker Volumes'
 date: '2024-04-29T12:12:44-04:00'
 draft: false
+tags: ['Docker']
 ---
 
 I think it's hard to overstate how revolutionary Docker has been for the tech industry. A lot of use cases that would have been served by a VM are typically replaced by Docker Containers.  
