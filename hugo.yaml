@@ -4,6 +4,8 @@ title: Ian Lanham | Exploring Data of All Shapes
 
 theme: hextra
 
+contentDir: content/blog
+
 menu:
   main:
     - name: About
@@ -41,6 +43,13 @@ params:
   blog:
     list:
       displayTags: true
+      sortBy: date
+      sortOrder: desc
 
   page:
     width: wide
+
+  theme:
+    # light | dark | system
+    default: system
+    displayToggle: true
