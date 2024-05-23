@@ -41,8 +41,6 @@ params:
   blog:
     list:
       displayTags: true
-      sortBy: date
-      sortOrder: desc
 
   page:
     width: wide
