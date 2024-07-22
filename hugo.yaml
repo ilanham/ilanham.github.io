@@ -2,7 +2,9 @@ baseURL: https://ianlanham.com/
 languageCode: en-us
 title: Ian Lanham | Exploring Data of All Shapes
 
-theme: hextra
+module:
+  imports:
+    - path: github.com/imfing/hextra
 
 enableInlineShortcodes: true
 
