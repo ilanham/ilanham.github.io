@@ -13,8 +13,13 @@ All of the volume mounts here are meant to be used with Named Volumes. I've trie
 
 ## Pulling the Latest Images
 
-{{< tabs items="MSSQL,PgSQL" defaultIndex="1" >}}
+{{< tabs items="PgSQL, MSSQL" defaultIndex="0" >}}
 
+  {{< tab >}}
+  ```bash
+  docker pull postgres:latest
+  ```
+  {{< /tab >}}
   {{< tab >}}
   ```bash
   docker pull mcr.microsoft.com/mssql/server:2022-latest
@@ -24,17 +29,12 @@ All of the volume mounts here are meant to be used with Named Volumes. I've trie
 
   [Source](https://learn.microsoft.com/en-us/sql/linux/quickstart-install-connect-docker?view=sql-server-ver16&tabs=cli&pivots=cs1-bash)
   {{< /tab >}}
-  {{< tab >}}
-  ```bash
-  docker pull postgres:latest
-  ```
-  {{< /tab >}}
 
 {{< /tabs >}}
 
 ## Run Commands
 
-{{< tabs items="MSSQL,PgSQL" defaultIndex="1" >}}
+{{< tabs items="PgSQL, MSSQL" defaultIndex="0" >}}
 
   {{< tab >}}
   ```bash
