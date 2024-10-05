@@ -38,6 +38,16 @@ All of the volume mounts here are meant to be used with Named Volumes. I've trie
 
   {{< tab >}}
   ```bash
+  docker run --name pg \
+    -p 5432:5432 \
+    -e POSTGRES_PASSWORD=<secret> \
+    -v pgdata:/var/lib/postgresql/data \
+    -d postgres
+  ```
+  [Source](https://www.docker.com/blog/how-to-use-the-postgres-docker-official-image/#1-Environment-variables)
+  {{< /tab >}}
+  {{< tab >}}
+  ```bash
   docker run --name SQL22 \
       -p 1433:1433 \
       -e "ACCEPT_EULA=Y" \
@@ -46,16 +56,6 @@ All of the volume mounts here are meant to be used with Named Volumes. I've trie
       -d mcr.microsoft.com/mssql/server:2022-latest
   ```
   [Source](https://learn.microsoft.com/en-us/sql/linux/sql-server-linux-docker-container-configure)
-  {{< /tab >}}
-  {{< tab >}}
-  ```bash
-  docker run --name pg \
-    -p 5432:5432 \
-    -e POSTGRES_PASSWORD=<secret> \
-    -v pgdata:/var/lib/postgresql/data \
-    -d postgres
-  ```
-  [Source](https://www.docker.com/blog/how-to-use-the-postgres-docker-official-image/#1-Environment-variables)
   {{< /tab >}}
 
 {{< /tabs >}}
