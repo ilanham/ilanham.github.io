@@ -37,7 +37,7 @@ All of the volume mounts here are meant to be used with Named Volumes. I've trie
 {{< tabs items="PgSQL, MSSQL" defaultIndex="0" >}}
 
   {{< tab >}}
-  ```bash
+  ```bash {filename="Bash"}
   docker run --name pg \
     -p 5432:5432 \
     -e POSTGRES_PASSWORD=<secret> \
@@ -47,7 +47,7 @@ All of the volume mounts here are meant to be used with Named Volumes. I've trie
   [Source](https://www.docker.com/blog/how-to-use-the-postgres-docker-official-image/#1-Environment-variables)
   {{< /tab >}}
   {{< tab >}}
-  ```bash
+  ```bash {filename="Bash"}
   docker run --name SQL22 \
       -p 1433:1433 \
       -e "ACCEPT_EULA=Y" \
