@@ -2,7 +2,7 @@
 title: 'Docker Run Commands'
 date: '2024-09-18T18:27:28-04:00'
 draft: false
-tags: ['Docker', 'Run', 'Postgres', 'MSSQL']
+tags: ['Docker', 'Postgres', 'MSSQL', 'ClickHouse']
 ---
 
 Sometimes I work with Docker every day for a few weeks, but then I don't need to touch it again for months at a time. I don't think my story is unique there - my role isn't in DevOps, so I figure out what I need, save the commands to a note somewhere, and move along.
@@ -13,7 +13,7 @@ All of the volume mounts here are meant to be used with Named Volumes. I've trie
 
 ## Pulling the Latest Images
 
-{{< tabs items="PgSQL, MSSQL" defaultIndex="0" >}}
+{{< tabs items="PgSQL, MSSQL, ClickHouse" defaultIndex="0" >}}
 
   {{< tab >}}
   ```bash
@@ -29,12 +29,17 @@ All of the volume mounts here are meant to be used with Named Volumes. I've trie
 
   [Source](https://learn.microsoft.com/en-us/sql/linux/quickstart-install-connect-docker?view=sql-server-ver16&tabs=cli&pivots=cs1-bash)
   {{< /tab >}}
+  {{< tab >}}
+  ```bash
+  docker pull clickhouse/clickhouse-server
+  ```
+  {{< /tab >}}
 
 {{< /tabs >}}
 
 ## Run Commands
 
-{{< tabs items="PgSQL, MSSQL" defaultIndex="0" >}}
+{{< tabs items="PgSQL, MSSQL, ClickHouse" defaultIndex="0" >}}
 
   {{< tab >}}
   ```bash {filename="Bash"}
@@ -48,7 +53,7 @@ All of the volume mounts here are meant to be used with Named Volumes. I've trie
   {{< /tab >}}
   {{< tab >}}
   ```bash {filename="Bash"}
-  docker run --name SQL22 \
+  docker run --name mssql22 \
       -p 1433:1433 \
       -e "ACCEPT_EULA=Y" \
       -e "MSSQL_SA_PASSWORD=<secret>" \
@@ -56,6 +61,19 @@ All of the volume mounts here are meant to be used with Named Volumes. I've trie
       -d mcr.microsoft.com/mssql/server:2022-latest
   ```
   [Source](https://learn.microsoft.com/en-us/sql/linux/sql-server-linux-docker-container-configure)
+  {{< /tab >}}
+  {{< tab >}}
+  ```bash
+  docker run --name clickhouse \
+    -p 9000:9000 \
+    -e CLICKHOUSE_USER=my_user \
+    -e CLICKHOUSE_PASSWORD=<secret> \
+    -e CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT=1 \
+    -v ch_data:/var/lib/clickhouse/ \
+    -v ch_logs:/var/log/clickhouse-server/ \
+    -d clickhouse/clickhouse-server:latest
+  ```
+  [Source](https://github.com/ClickHouse/ClickHouse/blob/master/docker/server/README.md)
   {{< /tab >}}
 
 {{< /tabs >}}
