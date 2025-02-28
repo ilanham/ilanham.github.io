@@ -66,6 +66,7 @@ All of the volume mounts here are meant to be used with Named Volumes. I've trie
   ```bash
   docker run --name clickhouse \
     -p 9000:9000 \
+    -p 8123:8123 \
     -e CLICKHOUSE_USER=my_user \
     -e CLICKHOUSE_PASSWORD=<secret> \
     -e CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT=1 \
